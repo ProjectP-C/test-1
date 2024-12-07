@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIN Protected Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 50px;
+    }
+
+    #auth-container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      margin: 10px 0;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    #content {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="auth-container">
+    <h1>Enter PIN to Access</h1>
+    <input type="password" id="pin" placeholder="Enter your PIN" maxlength="4">
+    <button onclick="validatePin()">Submit</button>
+    <p id="error-message"></p>
+  </div>
+
+  <div id="content">
+    <h1>Welcome to the Protected Content</h1>
+    <p>This content is only visible to authorized users.</p>
+  </div>
+
+  <script>
+    // Set a predefined PIN for the user to enter
+    const correctPin = "1234"; // Change this to whatever PIN you want
+
+    function validatePin() {
+      const pinInput = document.getElementById("pin").value;
+      const errorMessage = document.getElementById("error-message");
+      const content = document.getElementById("content");
+      
+      if (pinInput === correctPin) {
+        // Show the protected content
+        document.getElementById("auth-container").style.display = "none";
+        content.style.display = "block";
+      } else {
+        // Show error message if PIN is incorrect
+        errorMessage.textContent = "Incorrect PIN. Please try again.";
+      }
+    }
+  </script>
+</body>
+</html>
+ 
