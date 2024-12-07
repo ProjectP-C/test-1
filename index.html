@@ -7,47 +7,55 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <header>
-        <h1>Mystic Falls School</h1>
-        <p>Welcome to the best place for learning and growth!</p>
-    </header>
-
-    <section id="login-section">
-        <h2>Login to Your Account</h2>
-        <form id="login-form">
+    <!-- Login Page -->
+    <div class="login-container" id="login-page">
+        <img src="logo.png" alt="Mystic Falls School Logo" class="logo">
+        <h2>Login to Mystic Falls School</h2>
+        <form id="login-form" onsubmit="return login(event)">
             <label for="username">Username:</label>
-            <input type="text" id="username" required><br><br>
-
+            <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
-            <input type="password" id="password" required><br><br>
-
+            <input type="password" id="password" name="password" required>
             <button type="submit">Login</button>
         </form>
+        <p id="error-message" class="error-message"></p>
+    </div>
 
-        <div id="login-error-message" class="error-message" style="display: none;">Incorrect Username or Password!</div>
-    </section>
-
-    <section id="school-info-section" style="display:none;">
-        <h2>About Mystic Falls School</h2>
-        <p>Welcome to Mystic Falls School, a place where education meets adventure. Our school has a rich history, inspiring faculty, and a strong academic program that prepares students for the future.</p>
-        <h3>Our Facilities</h3>
-        <ul>
-            <li>Modern classrooms with interactive whiteboards</li>
-            <li>State-of-the-art science labs</li>
-            <li>Sports complex with gym and swimming pool</li>
-            <li>Creative arts studio</li>
-        </ul>
-        <h3>Academics</h3>
-        <p>Our curriculum offers a variety of subjects, from the arts and humanities to STEM, with a focus on fostering critical thinking and creativity.</p>
-    </section>
-
-    <footer>
-        <p>Contact us at: info@mysticfalls.edu | Call us at: 123-456-7890</p>
-    </footer>
+    <!-- Teachers Page -->
+    <div class="teachers-container" id="teachers-page" style="display: none;">
+        <img src="logo.png" alt="Mystic Falls School Logo" class="logo">
+        <h2>Our Teachers</h2>
+        <div class="teacher-list">
+            <div class="teacher">
+                <h3>Mr. Shapiro</h3>
+                <p>Mr. Shapiro teaches mathematics and is known for his engaging lectures.</p>
+            </div>
+            <div class="teacher">
+                <h3>Miss Millins</h3>
+                <p>Miss Millins teaches English and is passionate about literature.</p>
+            </div>
+            <div class="teacher">
+                <h3>Mr. Cassie</h3>
+                <p>Mr. Cassie teaches history and has a great way of making the past come alive.</p>
+            </div>
+            <div class="teacher">
+                <h3>Miss Rye</h3>
+                <p>Miss Rye teaches science and inspires students to explore the natural world.</p>
+            </div>
+            <div class="teacher">
+                <h3>Miss Harvey</h3>
+                <p>Miss Harvey teaches physical education and promotes fitness and well-being.</p>
+            </div>
+            <div class="teacher">
+                <h3>Miss Bennett</h3>
+                <p>Miss Bennett teaches music and encourages creativity in her students.</p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
